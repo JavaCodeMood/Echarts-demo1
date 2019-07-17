@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>柱状图</title>
+	<script type="text/javascript" src="echarts.min.js"></script>
+</head>
+<body>
+<div id="main" style="width: 1000px; height: 800px"></div>
+
+<script type="text/javascript">
+var myChart = echarts.init(document.getElementById('main'));
+option = {
+    legend: {},
+    tooltip: {},
+    dataset: {
+        dimensions: ['product', '2017', '2018', '2019'],
+        source: [
+            {product: 'Matcha Latte', '2015': 43.3, '2018': 85.8, '2019': 93.7},
+            {product: 'Milk Tea', '2017': 83.1, '2018': 73.4, '2019': 55.1},
+            {product: 'Cheese Cocoa', '2017': 86.4, '2018': 65.2, '2019': 82.5},
+            {product: 'Walnut Brownie', '2017': 72.4, '2018': 53.9, '2019': 39.1}
+        ]
+    },
+    xAxis: {type: 'category'},
+    yAxis: {},
+    // Declare several bar series, each will be mapped
+    // to a column of dataset.source by default.
+    series: [
+        {type: 'bar'},
+        {type: 'bar'},
+        {type: 'bar'}
+    ]
+};
+
+
+//使用刚指定的配置项和数据显示图表
+myChart.setOption(option);
+</script>
+</body>
+</html>
